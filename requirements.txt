@@ -1,7 +1,8 @@
 Tkinter
 SQLite3
 Matplotlib
-Pillow (PIL)
+Pillow
 ReportLab
 qrcode
 openpyxl
+
