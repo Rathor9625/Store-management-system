@@ -1,0 +1,7 @@
+Tkinter
+SQLite3
+Matplotlib
+Pillow (PIL)
+ReportLab
+qrcode
+openpyxl
