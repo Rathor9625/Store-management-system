@@ -1004,7 +1004,7 @@ def about():
     )
 h.add_command(label='About', command=about)
 try:
-    img = Image.open(r"E:\practies\amg\hello1.jpg")
+    img = Image.open(r"hello1.jpg")
     img = img.resize((1200, 750))
     blur_img = img.filter(ImageFilter.GaussianBlur(2))
     bg_photo = ImageTk.PhotoImage(blur_img)
