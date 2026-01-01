@@ -326,8 +326,8 @@ def manager():
                 rows = curser.fetchall()
                 for row in rows:
                     try:
-                        stock_val = int(row[4]) if row[4] is not None else 0
-                        reorder_val = int(row[6]) if row[6] is not None else 0
+                        stock_val = int(row[5]) if row[5] is not None else 0
+                        reorder_val = int(row[7]) if row[7] is not None else 0
                         tag = "low_stock" if stock_val <= reorder_val else ""
                     except (ValueError, TypeError):
                         tag = ""
