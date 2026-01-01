@@ -161,21 +161,21 @@ def manager():
             cost_price = curser.fetchone()[0] or 0
             stats_frame = Frame(main_frame, bg=BG_PANEL)
             stats_frame.pack(fill="x", pady=(0, 20))
+            stats = [
+                ("Total Products", total_products, C_PRIMARY),
+                ("Total Stock", total_stock, C_SUCCESS),
+                ("Out of Stock", out_of_stock, C_DANGER),
+                ("Total Investment", f"₹{cost_price:.2f}", C_PURPLE),
+                ("Total Profit", f"₹{(total_price-cost_price):.2f}", C_WARN)
+            ]
+            for stat_name, stat_value, color in stats:
+                card = Frame(stats_frame, bg=color, height=80)
+                card.pack(side="left", fill="both", expand=True, padx=5)
+                Label(card, text=stat_name, font=("Helvetica", 11, "bold"), bg=color, fg=TEXT_PRIMARY).pack(pady=(10, 2))
+                Label(card, text=str(stat_value), font=("Helvetica", 18, "bold"), bg=color, fg=TEXT_PRIMARY).pack(pady=(2, 10))
+            graph_frame = Frame(main_frame, bg=BG_PANEL)
+            graph_frame.pack(fill="both", expand=True, pady=10)
             def show_graphs():
-                stats = [
-                    ("Total Products", total_products, C_PRIMARY),
-                    ("Total Stock", total_stock, C_SUCCESS),
-                    ("Out of Stock", out_of_stock, C_DANGER),
-                    ("Total Investment", f"₹{cost_price:.2f}", C_PURPLE),
-                    ("Total Profit", f"₹{(total_price-cost_price):.2f}", C_WARN)
-                ]
-                for stat_name, stat_value, color in stats:
-                    card = Frame(stats_frame, bg=color, height=80)
-                    card.pack(side="left", fill="both", expand=True, padx=5)
-                    Label(card, text=stat_name, font=("Helvetica", 11, "bold"), bg=color, fg=TEXT_PRIMARY).pack(pady=(10, 2))
-                    Label(card, text=str(stat_value), font=("Helvetica", 18, "bold"), bg=color, fg=TEXT_PRIMARY).pack(pady=(2, 10))
-                graph_frame = Frame(main_frame, bg=BG_PANEL)
-                graph_frame.pack(fill="both", expand=True, pady=10)
                 global curser,conn
                 for widget in graph_frame.winfo_children():
                     widget.destroy()
