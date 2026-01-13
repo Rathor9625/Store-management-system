@@ -156,8 +156,7 @@ project/
 
 ## 👤 Author / Student Details
 
-* **Name:** Ashu
-* **Class:** XII A
+* **Name:** Rathore
 * **Subject:** Computer Science
 
 ---
@@ -167,3 +166,4 @@ project/
 यह प्रोजेक्ट **School / Practical Submission** के लिए एक complete और professional-level Inventory Management System है, जिसमें GUI, Database, Analytics, PDF, QR Code और Billing सभी शामिल हैं।
 
 ✨ *Perfect for Computer Science Project Submission* ✨
+
